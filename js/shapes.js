@@ -32,7 +32,10 @@ window.onload = function() {
 
 const sayHello = function() {
     // write your exercise 1 code here
-  window.prompt("Message: ");
+  input = window.prompt("Message:");
+  if (input.length > 50) {
+    window.alert("Your message is too long. Keep it under 50 characters.");
+  }
 };
 
 /*
