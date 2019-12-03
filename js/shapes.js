@@ -19,6 +19,11 @@ window.onload = function() {
     // equivalent set of six event listeners for your solutions. the first one is done for you.
 
     document.getElementById("hello").onclick = sayHello;
+    document.getElementById("rectangle").onclick = drawRectangle;
+    document.getElementById("colored-rectangle").onclick = drawColoredRectangle;
+    document.getElementById("triangle").onclick = drawTriangle;
+    document.getElementById("smile").onclick = drawFace;
+    document.getElementById("pyramid").onclick = drawPyramid;
 }
 
 /*
@@ -27,6 +32,7 @@ window.onload = function() {
 
 const sayHello = function() {
     // write your exercise 1 code here
+  window.prompt("Message: ");
 };
 
 /*
@@ -35,6 +41,10 @@ const sayHello = function() {
 
 const drawRectangle = function() {
     // write your exercise 2 code here
+    window.prompt("Width:");
+    window.prompt("Height:");
+    window.prompt("X:");
+    window.prompt("Y:");
 };
 
 /*
@@ -43,6 +53,7 @@ const drawRectangle = function() {
 
 const drawColoredRectangle = function() {
     // write your exercise 3 code here
+    window.prompt("Color:");
 };
 
 /*
@@ -51,6 +62,9 @@ const drawColoredRectangle = function() {
 
 const drawTriangle = function() {
     // write your exercise 4 code here
+    window.prompt("Side 1:");
+    window.prompt("Side 2:");
+    window.prompt("Side 3:");
 };
 
 /*
@@ -59,6 +73,7 @@ const drawTriangle = function() {
 
 const drawFace = function() {
     // write your exercise 4 code here
+    window.prompt("Radius:");
 };
 
 /*
@@ -67,4 +82,5 @@ const drawFace = function() {
 
 const drawPyramid = function() {
     // write your exercise 5 code here
+    window.prompt("Side:");
 };
