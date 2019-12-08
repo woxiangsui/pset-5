@@ -36,12 +36,12 @@ const sayHello = function() {
   while (input.length > 50) {
     window.alert("Your message is too long. Keep it under 50 characters.");
     input = window.prompt("Message:");
-    if (input.length <= 50) {
-      console.log(input);
-    }
-  } if (input.length <= 50) {
-    console.log(input);
   }
+    var box = document.getElementById("student-canvas-1");
+    var ctx = box.getContext("2d");
+    ctx.font = "48px Sans-serif";
+    ctx.clearRect(0, 0, box.width, box.height);
+    ctx.strokeText(input, 30, 70); 
 };
 
 /*
