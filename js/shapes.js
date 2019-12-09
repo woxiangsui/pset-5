@@ -41,7 +41,7 @@ const sayHello = function() {
     var ctx = box.getContext("2d");
     ctx.font = "48px Sans-serif";
     ctx.clearRect(0, 0, box.width, box.height);
-    ctx.strokeText(input, 30, 70); 
+    ctx.strokeText(input, 30, 70);
 };
 
 /*
@@ -62,7 +62,20 @@ const drawRectangle = function() {
 
 const drawColoredRectangle = function() {
     // write your exercise 3 code here
-    window.prompt("Color:");
+  var canvas = document.getElementById("student-canvas-3");
+  var ctx = canvas.getContext("2d");
+  color = window.prompt("Color:");
+  if (color == null) {
+    ctx.clearRect(0, 0, 100, 50);
+  }
+  if (color == "black" || "Black") {
+    ctx.clearRect(0, 0, 1024, 128);
+    ctx.fillRect(10, 10, 100, 50);
+  } if (color == "red" || "Red") {
+    ctx.fillStyle = "#FF0000";
+    ctx.clearRect(0, 0, 1024, 128);
+    ctx.fillRect(10, 10, 100, 50);
+  }
 };
 
 /*
