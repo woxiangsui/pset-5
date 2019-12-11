@@ -32,16 +32,23 @@ window.onload = function() {
 
 const sayHello = function() {
     // write your exercise 1 code here
+  var box = document.getElementById("student-canvas-1");
+  var ctx = box.getContext("2d");
+
   input = window.prompt("Message:");
-  while (input.length > 50) {
-    window.alert("Your message is too long. Keep it under 50 characters.");
-    input = window.prompt("Message:");
-  }
-    var box = document.getElementById("student-canvas-1");
-    var ctx = box.getContext("2d");
-    ctx.font = "48px Sans-serif";
+  if (input == null) {
     ctx.clearRect(0, 0, box.width, box.height);
-    ctx.strokeText(input, 30, 70);
+  }
+  else {
+    while (input.length > 50) {
+      window.alert("Your message is too long. Keep it under 50 characters.");
+      input = window.prompt("Message:");
+    }
+  }
+
+  ctx.font = "48px Sans-serif";
+  ctx.clearRect(0, 0, box.width, box.height);
+  ctx.strokeText(input, 30, 70);
 };
 
 /*
@@ -64,18 +71,47 @@ const drawColoredRectangle = function() {
     // write your exercise 3 code here
   var canvas = document.getElementById("student-canvas-3");
   var ctx = canvas.getContext("2d");
+
   color = window.prompt("Color:");
   if (color == null) {
-    ctx.clearRect(0, 0, 100, 50);
+    ctx.clearRect(0, 0, canvas.height, canvas.width);
   }
-  if (color == "black" || "Black") {
-    ctx.clearRect(0, 0, 1024, 128);
-    ctx.fillRect(10, 10, 100, 50);
-  } if (color == "red" || "Red") {
-    ctx.fillStyle = "#FF0000";
-    ctx.clearRect(0, 0, 1024, 128);
-    ctx.fillRect(10, 10, 100, 50);
+  else if (color === "black" || "Black" || "blue" || "Blue" || "green" || "Green" || "orange" || "Orange" || "purple" || "Purple" || "red" || "Red" || "yellow" || "Yellow") {
+    if (color == "black" || "Black") {
+      ctx.fillStyle = "black";
+      ctx.clearRect(0, 0, 1024, 128);
+      ctx.fillRect(10, 10, 100, 50);
+    } if (color == "blue" || "Blue") {
+      ctx.fillStyle = "blue";
+      ctx.clearRect(0, 0, 1024, 128);
+      ctx.fillRect(10, 10, 100, 50);
+    } if (color == "green" || "Green") {
+      ctx.fillStyle = "Green";
+      ctx.clearRect(0, 0, 1024, 128);
+      ctx.fillRect(10, 10, 100, 50);
+    } if (color == "orange" || "Orange") {
+      ctx.fillStyle = "orange";
+      ctx.clearRect(0, 0, 1024, 128);
+      ctx.fillRect(10, 10, 100, 50);
+    } if (color == "purple" || "Purple") {
+      ctx.fillStyle = "purple";
+      ctx.clearRect(0, 0, 1024, 128);
+      ctx.fillRect(10, 10, 100, 50);
+    }if (color == "red" || "Red") {
+      ctx.fillStyle = "red";
+      ctx.clearRect(0, 0, 1024, 128);
+      ctx.fillRect(10, 10, 100, 50);
+    }if (color == "yellow" || "Yellow") {
+      ctx.fillStyle = "yellow";
+      ctx.clearRect(0, 0, 1024, 128);
+      ctx.fillRect(10, 10, 100, 50);
+    } else {
+        while (color != "black" || "Black" || "blue" || "Blue" || "green" || "Green" || "orange" || "Orange" || "purple" || "Purple" || "red" || "Red" || "yellow" || "Yellow") {
+          window.alert(color + " is not a supported color");
+          window.prompt("Color:");
+      }
   }
+}
 };
 
 /*
