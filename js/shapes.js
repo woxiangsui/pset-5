@@ -48,7 +48,7 @@ const sayHello = function() {
 
   ctx.font = "48px Sans-serif";
   ctx.clearRect(0, 0, box.width, box.height);
-  ctx.strokeText(input, 30, 70);
+  ctx.strokeText(input, 30, 70, 1024);
 };
 
 /*
@@ -85,23 +85,23 @@ const drawColoredRectangle = function() {
       ctx.fillStyle = "blue";
       ctx.clearRect(0, 0, 1024, 128);
       ctx.fillRect(10, 10, 100, 50);
-    } if (color == "green" || "Green") {
+    } else if (color == "green" || "Green") {
       ctx.fillStyle = "Green";
       ctx.clearRect(0, 0, 1024, 128);
       ctx.fillRect(10, 10, 100, 50);
-    } if (color == "orange" || "Orange") {
+    } else if (color == "orange" || "Orange") {
       ctx.fillStyle = "orange";
       ctx.clearRect(0, 0, 1024, 128);
       ctx.fillRect(10, 10, 100, 50);
-    } if (color == "purple" || "Purple") {
+    } else if (color == "purple" || "Purple") {
       ctx.fillStyle = "purple";
       ctx.clearRect(0, 0, 1024, 128);
       ctx.fillRect(10, 10, 100, 50);
-    }if (color == "red" || "Red") {
+    }else if (color == "red" || "Red") {
       ctx.fillStyle = "red";
       ctx.clearRect(0, 0, 1024, 128);
       ctx.fillRect(10, 10, 100, 50);
-    }if (color == "yellow" || "Yellow") {
+    }else if (color == "yellow" || "Yellow") {
       ctx.fillStyle = "yellow";
       ctx.clearRect(0, 0, 1024, 128);
       ctx.fillRect(10, 10, 100, 50);
