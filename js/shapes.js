@@ -193,8 +193,42 @@ const drawTriangle = function() {
  */
 
 const drawFace = function() {
-    // write your exercise 4 code here
-    window.prompt("Radius:");
+    // write your exercise 5 code here
+  var canvas = document.getElementById("student-canvas-5");
+  var ctx = canvas.getContext("2d");
+  let cont = true;
+
+  radius = Number(window.prompt("Radius:"));
+
+  while (cont) {
+    if (radius == null) {
+      ctx.clearRect(0, 0, 1024, 128);
+      cont = false;
+    } if ((radius < 32) || !isNumber(radius)) {
+        window.alert("Your radius must be at least 32.");
+        radius = Number(window.prompt("Radius:"));
+    } if (radius > (canvas.height/2)) {
+        window.alert("Your smiley face won't fit on the canvas.");
+        radius = Number(window.prompt("Radius:"));
+    } if (isNaN(radius)) {
+        window.alert("Your radius is not a number.");
+        radius = Number(window.prompt("Radius:"));
+    }
+    eye = 0.15 * radius;
+    mouth = 0.7 * radius;
+    x = canvas.width/2;
+    y = canvas.height/2;
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI * 2, true);
+    ctx.moveTo(x + mouth, y);
+    ctx.arc(x, y, mouth, 0, Math.PI, false);  // Mouth (clockwise)
+    ctx.moveTo((x - (radius * 0.4)) + eye, y - (radius * 0.4));
+    ctx.arc(x - (radius * 0.4), y - (radius * 0.4), eye, 0, Math.PI * 2, true);  // Left eye
+    ctx.moveTo((x + (radius * 0.4)) + eye, y - (radius * 0.4));
+    ctx.arc(x + (radius * 0.4), y - (radius * 0.4), eye, 0, Math.PI * 2, true);  // Right eye
+    ctx.stroke();
+    cont = false;
+  }
 };
 
 /*
@@ -202,6 +236,6 @@ const drawFace = function() {
  */
 
 const drawPyramid = function() {
-    // write your exercise 5 code here
+    // write your exercise 6 code here
     window.prompt("Side:");
 };
