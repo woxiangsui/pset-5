@@ -38,6 +38,7 @@ const sayHello = function() {
   input = window.prompt("Message:");
   if (input == null) {
     ctx.clearRect(0, 0, box.width, box.height);
+    input = "";
   }
   else {
     while (input.length > 50) {
@@ -72,46 +73,55 @@ const drawColoredRectangle = function() {
   var canvas = document.getElementById("student-canvas-3");
   var ctx = canvas.getContext("2d");
 
+  let cont = true;
   color = window.prompt("Color:");
   if (color == null) {
     ctx.clearRect(0, 0, canvas.height, canvas.width);
   }
-  else if (color === "black" || "Black" || "blue" || "Blue" || "green" || "Green" || "orange" || "Orange" || "purple" || "Purple" || "red" || "Red" || "yellow" || "Yellow") {
-    if (color == "black" || "Black") {
+
+while (cont) {
+    if (color === ("black" || "Black")) {
       ctx.fillStyle = "black";
       ctx.clearRect(0, 0, 1024, 128);
       ctx.fillRect(10, 10, 100, 50);
-    } if (color == "blue" || "Blue") {
+      cont = false;
+    } else if (color === ("blue" || "Blue")) {
       ctx.fillStyle = "blue";
       ctx.clearRect(0, 0, 1024, 128);
       ctx.fillRect(10, 10, 100, 50);
-    } else if (color == "green" || "Green") {
+      cont = false;
+    } else if (color === ("green" || "Green")) {
       ctx.fillStyle = "Green";
       ctx.clearRect(0, 0, 1024, 128);
       ctx.fillRect(10, 10, 100, 50);
-    } else if (color == "orange" || "Orange") {
+      cont = false;
+    } else if (color === ("orange" || "Orange")) {
       ctx.fillStyle = "orange";
       ctx.clearRect(0, 0, 1024, 128);
       ctx.fillRect(10, 10, 100, 50);
-    } else if (color == "purple" || "Purple") {
+      cont = false;
+    } else if (color === ("purple" || "Purple")) {
       ctx.fillStyle = "purple";
       ctx.clearRect(0, 0, 1024, 128);
       ctx.fillRect(10, 10, 100, 50);
-    }else if (color == "red" || "Red") {
+      cont = false;
+    } else if (color === ("red" || "Red")) {
       ctx.fillStyle = "red";
       ctx.clearRect(0, 0, 1024, 128);
       ctx.fillRect(10, 10, 100, 50);
-    }else if (color == "yellow" || "Yellow") {
+      cont = false;
+    } else if (color === ("yellow" || "Yellow")) {
       ctx.fillStyle = "yellow";
       ctx.clearRect(0, 0, 1024, 128);
       ctx.fillRect(10, 10, 100, 50);
+      cont = false;
+    } else if (color == null){
+      cont = false;
     } else {
-        while (color != "black" || "Black" || "blue" || "Blue" || "green" || "Green" || "orange" || "Orange" || "purple" || "Purple" || "red" || "Red" || "yellow" || "Yellow") {
-          window.alert(color + " is not a supported color");
-          window.prompt("Color:");
-      }
+      window.alert(color + " is not a supported color.");
+      color = window.prompt("Color:");
+    }
   }
-}
 };
 
 /*
@@ -120,9 +130,62 @@ const drawColoredRectangle = function() {
 
 const drawTriangle = function() {
     // write your exercise 4 code here
-    window.prompt("Side 1:");
-    window.prompt("Side 2:");
-    window.prompt("Side 3:");
+  var canvas = document.getElementById("student-canvas-4");
+  var ctx = canvas.getContext("2d");
+  let cont = true;
+
+    a = Number(window.prompt("Side 1:"));
+    b = Number(window.prompt("Side 2:"));
+    c = Number(window.prompt("Side 3:"));
+
+    while (cont) {
+      if ((a == null) || (b == null) || (c == null)) {
+        ctx.clearRect(0, 0, 1024, 128);
+        cont = false;
+    } else if ((1 > a > canvas.height) || (1 > b > canvas.height) || (1 > c > canvas.height)) {
+        window.alert("Your sides should be between 1 and 1024.");
+        a = Number(window.prompt("Side 1:"));
+        b = Number(window.prompt("Side 2:"));
+        c = Number(window.prompt("Side 3:"));
+    } else if (isNaN(a) || isNaN(b) || isNaN(c)) {
+      window.alert("One of your sides is not a number.")
+      a = Number(window.prompt("Side 1:"));
+      b = Number(window.prompt("Side 2:"));
+      c = Number(window.prompt("Side 3:"));
+    }
+    if (a>b){
+      temp = a;
+      a = b;
+      b = temp;
+    } if (a>c){
+      temp = a;
+      a = c;
+      c = temp;
+    } if (c<b){
+      temp = c;
+      c = b;
+      b = temp;
+    } if (a*a+b*b == c*c) {
+      x = 25
+      y = 25;
+      ctx.clearRect(0, 0, 1024, 128);
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      y += a;
+      ctx.lineTo(x, y);
+      x += b;
+      ctx.lineTo(x, y);
+      ctx.closePath();
+      ctx.stroke();
+      cont = false;
+    }
+    else if (a*a+b*b != c*c) {
+      window.alert("That's not a valid right triangle.");
+      a = Number(window.prompt("Side 1:"));
+      b = Number(window.prompt("Side 2:"));
+      c = Number(window.prompt("Side 3:"));
+    }
+  }
 };
 
 /*
